@@ -157,7 +157,7 @@ void *mm_malloc(size_t size)
 
   /* Adjust block size for overhead and alignment requirements */
   if (size <= DSIZE) {
-    asize = 2*DSIZE;
+    asize = MIN_BLK_SIZE;
   } else {
     asize = DSIZE * ((size + (DSIZE) + (DSIZE-1)) / DSIZE );
   }
